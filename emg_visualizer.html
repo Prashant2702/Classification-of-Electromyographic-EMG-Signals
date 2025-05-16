@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMG Visualizer | EMG Classiferr</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="emg_visualization.js" defer></script>
+    <style>
+        .visualization-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            padding: 20px;
+        }
+        .controls {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .chart-area {
+            height: 400px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 10px;
+            background: white;
+        }
+        .chart-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .chart-container {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 10px;
+            background: white;
+            height: 300px;
+        }
+        button, select {
+            padding: 8px 16px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+            background: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>EMG Visualizer</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="classifier.html">Classifier</a></li>
+                <li><a href="emg_visualizer.html">Visualizer</a></li>
+                <li><a href="about.html">About Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="emg-content">
+        <section>
+            <h2>EMG Signal Analysis</h2>
+            <div class="visualization-container">
+                <div class="controls">
+                    <select id="visType">
+                        <option value="time">Time Domain</option>
+                        <option value="frequency">Frequency Domain</option>
+                        <option value="features">Features</option>
+                    </select>
+                    <button id="updateVis">Update View</button>
+                    <button id="loadData">Load Data</button>
+                </div>
+                
+                <div class="chart-area">
+                    <canvas id="emgChart"></canvas>
+                </div>
+                
+                <div class="chart-grid">
+                    <div class="chart-container">
+                        <h3>Time Series</h3>
+                        <canvas id="timeChart"></canvas>
+                    </div>
+                    <div class="chart-container">
+                        <h3>Frequency Analysis</h3>
+                        <canvas id="freqChart"></canvas>
+                    </div>
+                    <div class="chart-container">
+                        <h3>Extracted Features</h3>
+                        <canvas id="featureChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 EMG Classiferr. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

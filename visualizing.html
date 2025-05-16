@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMG Visualization | EMG Classiferr</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <header>
+        <h1>EMG Visualization</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="classifier.html">Classifier</a></li>
+                <li><a href="visualizing.html">Visualizing</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="signup.html">Sign Up</a></li>
+            </ul>
+        </nav>
+        <button id="darkModeToggle">Toggle Dark Mode</button>
+    </header>
+
+    <main class="emg-content">
+        <section class="animated fadeIn">
+            <h2>EMG Signal Visualization</h2>
+            <div class="visualization-container">
+                <div class="controls">
+                    <h3>Visualization Options</h3>
+                    <select id="visType">
+                        <option value="time">Time Domain (Line)</option>
+                        <option value="frequency">Frequency Domain (Bar)</option>
+                        <option value="spectrogram">Spectrogram</option>
+                        <option value="scatter">Point Chart</option>
+                        <option value="radar">Radar Chart</option>
+                        <option value="polar">Polar Area</option>
+                    </select>
+                    <button id="updateVis">Update Visualization</button>
+                </div>
+                <div class="chart-area">
+                    <canvas id="emgChart"></canvas>
+                </div>
+                <div class="chart-grid">
+                    <div class="chart-container">
+                        <h3>Time Series</h3>
+                        <canvas id="lineChart"></canvas>
+                    </div>
+                    <div class="chart-container">
+                        <h3>Frequency Analysis</h3>
+                        <canvas id="barChart"></canvas>
+                    </div>
+                    <div class="chart-container">
+                        <h3>Signal Distribution</h3>
+                        <canvas id="scatterChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 EMG Classiferr. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
